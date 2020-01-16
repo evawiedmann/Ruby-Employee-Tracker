@@ -1,0 +1,8 @@
+<h1><%= @individual.name %></h1>
+
+<p><%= link_to "Edit", edit_individual_path(@individual) %></p>
+<p><%= link_to "Delete", individual_path(@individual),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to individuals", individuals_path %></p>

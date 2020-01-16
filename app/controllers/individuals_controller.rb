@@ -23,10 +23,6 @@ class IndividualsController < ApplicationController
     end
   end
 
-  private
-  def individual_params
-    params.require(:individual).permit(:name)
-  end
 
   def edit
     # Code for edit individual form goes here.
@@ -36,7 +32,7 @@ class IndividualsController < ApplicationController
 
   def show
     # Code for showing a single individual goes here.
-    @individual= Individual.find(params[:id])
+    @individual = Individual.find(params[:id])
     render :show
   end
 
@@ -57,4 +53,8 @@ class IndividualsController < ApplicationController
     redirect_to individuals_path
   end
 
+  private
+  def individual_params
+    params.require(:individual).permit(:name)
+  end
 end
